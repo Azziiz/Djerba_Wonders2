@@ -1,0 +1,23 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs-content">
+
+    <% if (results.length > 0) { %>
+      <% results.forEach(result => { %>
+        <a class="large-img" href="/beaches/<%= result._id %>">
+          <img src="<%= (encodeURI(result.images[0])) %>" alt="">
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>There are no blogs to display...</p>
+    <% } %>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

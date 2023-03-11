@@ -1,0 +1,34 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="all">
+
+
+    <div class="text">
+    <h3>Djerba is a small island located off the coast of Tunisia, known for its stunning beaches, rich history, and unique culture. Visitors to Djerba can explore the island's many ancient ruins, including the famous El Ghriba Synagogue, which dates back to the 6th century BCE. Alternatively, those looking for a more relaxing holiday can simply soak up the sun on one of the island's beautiful beaches. Whether you're interested in history, culture, or just a great vacation spot, Djerba has something to offer everyone</h3>
+    </div>
+    <div class="Imgs">
+    <% if (results.length > 0) { %>
+      <% results.forEach(result => { %>
+        
+        <a class="" href="/home/<%= result._id %>">
+          <img src="<%= (encodeURI(result.images[0])) %>" alt="">
+        </a>
+      
+      <% }) %>
+    <% } else { %>
+      <p>There are no blogs to display...</p>
+    <% } %>
+  </div>
+
+  </div>
+    
+  
+  
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

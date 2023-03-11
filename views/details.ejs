@@ -1,0 +1,31 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="details-content">
+    <h2><%= results.title %></h2>
+    <div class="content">
+      <p><%= results.disc %></p>
+
+    </div>
+    <div class="small-imgs">
+      <% for (i = 0; i < results.images.length; i++) { %>
+        <img src="<%= (encodeURI(results.images[i])) %>" alt="">
+     <% } %>
+          
+    </div>
+          
+
+
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+
+  <script>
+    
+  </script>
+</body>
+</html>
